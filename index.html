@@ -1,35 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>图片上传</title>
     <link rel="stylesheet" href="css/tinyImgUpload.css">
 </head>
+
 <body>
 
-<div id="upload">
+    <div id="upload">
 
-</div>
-<button class="submit">submit</button>
-<script src="js/tinyImgUpload.js"></script>
-<script>
-document.documentElement.style.fontSize = document.documentElement.clientWidth*0.1+'px';
+    </div>
+    <button class="submit">submit</button>
+    <script src="js/tinyImgUpload.js"></script>
+    <script>
+        document.documentElement.style.fontSize = document.documentElement.clientWidth * 0.1 + 'px';
 
-var options = {
-    path: 'http://192.168.1.240:8090/cfAdmin/retrieval/retrievalPics.do?count=1&alarmThreshold=0.8',
-    onSuccess: function (res) {
-        console.log(res);
-    },
-    onFailure: function (res) {
-        console.log(res);
-    }
-}
+        var options = {
+            path: 'http://192.168.1.240:8090/cfAdmin/retrieval/retrievalPics.do?count=1&alarmThreshold=0.8',
+            onSuccess: function (res) {
+                console.log(res);
+            },
+            onFailure: function (res) {
+                console.log(res);
+            }
+        }
 
-var upload = tinyImgUpload('#upload', options);
-document.getElementsByClassName('submit')[0].onclick = function (e) {
-    upload();
-}
-</script>
+        var upload = tinyImgUpload('#upload', options);
+        document.getElementsByClassName('submit')[0].onclick = function (e) {
+            upload();
+        }
+    </script>
 </body>
+
 </html>
